@@ -157,16 +157,6 @@ def inputrdf(RDF_dir, dir):
                 if "isMemberOfCollection" not in new[r+1][0]:
                     field_member_of.append("")
 
-    #Collection:
-    print("collection RDF directory: {}".format(RDF_dir)) #directory of data
-    print("collection csv: {}".format(dir)) #directory of csv
-    #info:
-    print("number of Meta list: ({})".format(len(new))) #LENGH OF "new" LIST CONTAINING ALL 2 TAGS
-    print("lengh of the rows of data in metadata.csv: ({})".format(len(parrent))) #lengh of the rows of data in metadata.csv
-    print("Lenght of field_member_of(collections): ({})".format(len(field_member_of))) #Lenght of field_member_of(collections)
-    print("Lenght of weight(child numbers): ({})".format(len(weight))) #Lenght of field_member_of(collections)
-    print("Lenght of parrent names: ({})".format(len(parrent))) #Lenght of parrent names
-    print("--------------------------------------------------------------------------------------------------------------------")
 
     LDL2 = pd.read_csv("csv/output/{}.csv".format(RDF_dir.split("/")[1]))
     LDL2df = pd.DataFrame(LDL2)     
