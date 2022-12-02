@@ -1,4 +1,4 @@
-# Metadata To csv
+# Metadata To csv Python script
 The script created to prepare a csv sheet to run the Islandora Workbench to import relational data from the old Louisiana Digiatal Library to the new website. It starts with the initial CSV metadata made created from xml files from the website. It has two stages:
 ### 1) creating needed columns and drops the unwanted fields from Metadata.
 - a) In the first step, the script gets the metadata csv and uses existance of OBJ files in the directory, and process them to generate a right pattern for file column according to existance of those OBJ data for each node.
