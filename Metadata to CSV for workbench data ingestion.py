@@ -141,7 +141,8 @@ def inputrdf(RDF_dir, dir):
             if "Description" in new[r][0]:
                   
                 if "Description" in new[r+1][0]:
-                    parrent.append("")
+                    collectionName = RDF_dir.split("/")[1]
+                    parrent.append("{}:collection".format(collectionName))
                     weight.append("")
                                         
                 if "isSequenceNumberOf" in new[r+1][0]:
@@ -153,7 +154,7 @@ def inputrdf(RDF_dir, dir):
                 if "isMemberOfCollection" in new[r+1][0]:
                     Collection = new[r+1][1][0].split("/")[1]
                     field_member_of.append(Collection)
-                    parrent.append("")
+                    parrent.append(Collection)
                     weight.append("")
 
                 if "isMemberOfCollection" not in new[r+1][0]:
@@ -173,9 +174,11 @@ def inputrdf(RDF_dir, dir):
     LDL2 = pd.read_csv("csv/output/{}.csv".format(RDF_dir.split("/")[1]))
     LDL2df = pd.DataFrame(LDL2)     
     LDL2df["parent_id"] = parrent    
-    # LDL2df["field_member_of"] = field_member_of
     LDL2df["field_weight"] = weight
     LDL2df["field_edtf_date_created"] = ""
+    LDL2df["field_linked_agent"] = ""
+
+    
 
     parentChild = LDL2df.to_csv("/Users/mfatol1/Documents/islandora_workbench/input_data/Presentation/csv/output/{}".format(dir), index=False)
     return parentChild
