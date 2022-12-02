@@ -8,5 +8,5 @@ The script was created to prepare a CSV sheet for running the Islandora Workbenc
 ### 2) Processing the RDF files to write down the relationships(parent and children pages)
 - 1) With looping into the file directory and RDF files in the folder, the script uses tags, attributes, and texts in RDF and cleans their name in an order that drupal can understand them.
 - 2) Using three main tags inside the RDFs, which determine the relationship between nodes, the parent_id column can be filled out. Having information about relationships is crucial in the Workbench data ingestion stage.  
-- 3) Also, by looping trhough RDFs we get the correct information about field_weight, which indicates the order of children's pages.
-- 4) Also, by looping through RDFs, we get the correct information about field_weight, which indicates the order of children's pages.
+- 3) Also, by looping through  RDFs we get the correct information about field_weight, which indicates the order of children's pages.
+- 4) Also, by looping through  RDFs, we get the correct information about field_weight, which indicates the order of children's pages.
