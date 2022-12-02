@@ -1,3 +1,5 @@
+from dataclasses import replace
+from fileinput import filename
 import pandas as pd
 import xml.etree.ElementTree as ET
 import glob
@@ -19,6 +21,8 @@ for file in files:
 
 #################### 2) Getting data and fill the file column if files exist in the Data directory ########################
 def input_directory(directory, OBJS):
+    Collection = directory.split(".")[0]
+    print(Collection)
     LDLdf = pd.DataFrame(pd.read_csv(directory))
     coll_name = []
     coll_num = []
@@ -44,7 +48,7 @@ def input_directory(directory, OBJS):
     file_column = []
     for fileNames in fileName:
         if fileNames in ObjFiles:
-            file_column.append("Data/{}{}".format(fileNames,fileformat))
+            file_column.append("Data/{}/{}{}".format(Collection,fileNames,fileformat))
         else:
             file_column.append("")
 
@@ -155,12 +159,23 @@ def inputrdf(RDF_dir, dir):
                 if "isMemberOfCollection" not in new[r+1][0]:
                     field_member_of.append("")
 
+    #Collection:
+    print("collection RDF directory: {}".format(RDF_dir)) #directory of data
+    print("collection csv: {}".format(dir)) #directory of csv
+    #info:
+    print("number of Meta list: ({})".format(len(new))) #LENGH OF "new" LIST CONTAINING ALL 2 TAGS
+    print("lengh of the rows of data in metadata.csv: ({})".format(len(parrent))) #lengh of the rows of data in metadata.csv
+    print("Lenght of field_member_of(collections): ({})".format(len(field_member_of))) #Lenght of field_member_of(collections)
+    print("Lenght of weight(child numbers): ({})".format(len(weight))) #Lenght of field_member_of(collections)
+    print("Lenght of parrent names: ({})".format(len(parrent))) #Lenght of parrent names
+    print("--------------------------------------------------------------------------------------------------------------------")
 
     LDL2 = pd.read_csv("csv/output/{}.csv".format(RDF_dir.split("/")[1]))
     LDL2df = pd.DataFrame(LDL2)     
     LDL2df["parent_id"] = parrent    
-    LDL2df["field_member_of"] = field_member_of
+    # LDL2df["field_member_of"] = field_member_of
     LDL2df["field_weight"] = weight
+    LDL2df["field_edtf_date_created"] = ""
 
     parentChild = LDL2df.to_csv("/Users/mfatol1/Documents/islandora_workbench/input_data/Presentation/csv/output/{}".format(dir), index=False)
     return parentChild
