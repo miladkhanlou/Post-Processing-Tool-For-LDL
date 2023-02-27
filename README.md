@@ -1,4 +1,4 @@
-# Metadata To csv Python script
+# Post processing script for cleaning metadata generated from xml2workbench.py to Prepare the cleaned Metadata for Migrating data to Louisiana Digital Library new website
 The script was created to prepare a CSV sheet for running the Islandora Workbench to import relational data from the old Louisiana Digital Library to the new website. It starts with the initial CSV metadata made created from XML files from the website. It has two stages:
 ### 1) Creating needed columns and dropping the unwanted fields from Metadata.
 - a) In the first step, the script gets the metadata CSV, uses the existence of OBJ files in the directory, and processes them to generate the correct pattern for the file column according to the existence of those OBJ data for each node.
