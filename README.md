@@ -11,16 +11,17 @@ Downloaded zip files from the LDL. We have used [islandora_datastream_crud](http
 ### instructions:
 
 - Create a "Data" folder in your Post-Processing-Tool-For-LDL folder:
-- ```cd Post-Processing-Tool-For-LDL```
-- ```mkdir Data```
-- ```mkdir csv```
-- ```unzip -d Data path-to-your/datafiles.zip```
-- ```cd Data/datafiles/```
-- ```cp *.csv ../csv```
+  -```cd Post-Processing-Tool-For-LDL```
+  - ```mkdir Data```
+  - ```mkdir csv```
+  - ```unzip -d Data path-to-your/datafiles.zip```
+  - ```cd Data/datafiles/```
+  - ```cp *.csv ../csv```
 - if your data includes jp2 files, convert them to PNG:
-- ```for f in *.jp2; do convert "$f" -type truecolor "${f%.*}.png"; done;```
-- ```cd ..```
-- ```python3 metadata_process.py```
+  - ```for f in *.jp2; do convert "$f" -type truecolor "${f%.*}.png"; done;```
+  - ```cd ..```
+- Run the python script to clean and add fields to the csv
+  - ```python3 metadata_process.py```
 
 ## functionalities of the the python script:
 ### 1) Creating needed columns and dropping the unwanted fields from Metadata.
