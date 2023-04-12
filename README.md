@@ -5,8 +5,7 @@ This script cleans csv data generated from the LSU fork of [xml2workbench.py](ht
 
 A csv file processed by [xml2workbench.py](https://github.com/lsulibraries/xml2workbench/) see our fork of Rosie LaFaive's xml2workbench for instructions
 
-Downloaded zip files from the LDL. We have used [islandora_datastream_crud](https://github.com/mjordan/islandora_datastream_crud) to download datastreams from our islandora 7.x server. MODS, RELS-EXT (RDF), and OBJ datastreams (.mp3, .mp4, .jp2*, .pdf)
-  - (jp2 must be converted to PNG, we suggest using imagemagick's convert)
+Downloaded zip files from the LDL. We have used [islandora_datastream_crud](https://github.com/mjordan/islandora_datastream_crud) to download datastreams from our islandora 7.x server. MODS, RELS-EXT (RDF), and OBJ datastreams (.mp3, .mp4, .jp2*, .pdf) (jp2s must be converted to PNG, we suggest using imagemagick's convert)
 
 ### instructions:
 
