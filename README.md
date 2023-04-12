@@ -20,7 +20,7 @@ Downloaded zip files from the LDL. We have used [islandora_datastream_crud](http
 - if your data includes jp2 files, convert them to PNG:
   - ```for f in *.jp2; do convert "$f" -type truecolor "${f%.*}.png"; done;```
   - ```cd ..```
-- Run the python script to clean and add fields to the csv
+- Run the python script to clean the csv metadata and add filepath and rdf-relationship fields
   - ```python3 metadata_process.py```
 
 ## functionalities of the the python script:
