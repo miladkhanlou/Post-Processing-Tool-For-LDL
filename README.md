@@ -21,6 +21,7 @@ Downloaded zip files from the LDL. We have used [islandora_datastream_crud](http
   - ```cd ..```
 - Run the python script to clean the csv metadata and add filepath and rdf-relationship fields
   - ```python3 metadata_process.py```
+  </br>
 
 ## functionalities of the the python script:
 ### 1) Creating needed columns and dropping the unwanted fields from Metadata.
