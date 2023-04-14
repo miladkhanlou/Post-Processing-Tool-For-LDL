@@ -1,4 +1,4 @@
-# Post processing script for cleaning metadata 
+# A.  Post processing script for cleaning metadata 
 This script cleans csv data generated from the LSU fork of [xml2workbench.py](https://github.com/lsulibraries/xml2workbench/) and adds columns of new data to prepare content for ingest with [islandora_workbench](https://github.com/mjordan/islandora_workbench). Migrating of collections from the Louisiana Digital Library website into an Islandora 8 instance. Running the script will 'clean' the metadata, it also adds new fields to preserve relationshps between entities, such as parent/compound or newspape/issue/page. The output csv file can be processed using Islandora Workbench to upload content to the Islandora 8 instance specified in your Islandora Workbench config file. 
 
 ## Requirements:
@@ -38,7 +38,7 @@ Downloaded zip files from the LDL. We have used [islandora_datastream_crud](http
 
 
 
-# ETL pipeline for LDL contents
+# B.  ETL pipeline for LDL contents
 
 You should follow steps to download LDL metadata. There are 2 main ways to do so. One requires server access, the other uses a shell script to curl down datastreams from the LDL website.
 
