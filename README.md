@@ -35,6 +35,9 @@ Downloaded zip files from the LDL. We have used [islandora_datastream_crud](http
 - 4) Also, by looping through  RDFs, we get the correct information about field_weight, which indicates the order of children's pages.
 
 
+
+
+
 # ETL pipeline for LDL contents
 
 You should follow steps to download LDL metadata. There are 2 main ways to do so. One requires server access, the other uses a shell script to curl down datastreams from the LDL website.
